@@ -12,7 +12,6 @@ import (
 
 func db() {
 	psqlconn := fmt.Sprintf("postgresql://%s:%s@%s:%s/%s", os.Getenv("PSQL_USER"), os.Getenv("PSQL_PWD"), os.Getenv("PSQL_HOST"), os.Getenv("PSQL_PORT"), os.Getenv("PSQL_DB"))
-	fmt.Println(psqlconn)
 	db, err := sql.Open("postgres", psqlconn)
 	if err != nil {
 		panic(err)
