@@ -19,7 +19,7 @@ type KeyData struct {
 func main() {
 	godotenv.Load()
 	app := fiber.New()
-	app.Get("/v1/verify/key", func(res *fiber.Ctx) {
+	app.Post("/v1/verify/key", func(res *fiber.Ctx) {
 		fields := new(KeyData)
 		if err := res.BodyParser(fields); err != nil {
 			panic(err)
